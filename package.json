@@ -1,0 +1,22 @@
+{
+  "name": "typegoose",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "ts-node-dev index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typegoose/typegoose": "^7.6.1",
+    "@types/mongoose": "5.10",
+    "apollo-server": "^2.25.2",
+    "class-validator": "^0.13.1",
+    "graphql": "^15.5.1",
+    "mongoose": "5.10.15",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.1.7",
+    "type-graphql": "^1.1.1",
+    "typescript": "3.9"
+  }
+}

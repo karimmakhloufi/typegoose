@@ -1,0 +1,9 @@
+services:
+  back:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 4000:4000
+  db:
+    image: mongo
