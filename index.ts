@@ -14,6 +14,8 @@ import {
 } from "type-graphql";
 import { Length } from "class-validator";
 
+import ErrorInterceptor from "./ErrorInterceptorMiddleware";
+
 @ObjectType("BookType")
 @InputType("BookInput")
 class Book {
@@ -46,6 +48,7 @@ class BookResolver {
 
 const schema = buildSchemaSync({
   resolvers: [BookResolver],
+  globalMiddlewares: [ErrorInterceptor],
 });
 
 const server = new ApolloServer({ schema });
