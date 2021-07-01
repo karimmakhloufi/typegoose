@@ -31,23 +31,10 @@ const bookModel = getModelForClass(Book);
 
 @Resolver(Book)
 class BookResolver {
+  // {books{title}}
   @Query(() => [Book])
   async books(): Promise<Book[]> {
     return await bookModel.find();
-  }
-
-  // {books{title, author}}
-  @Query(() => Book)
-  async book(): Promise<Book | null> {
-    return await bookModel.findOne();
-  }
-
-  @Query(() => Book)
-  async bookfalse(): Promise<Book | null> {
-    return {
-      title: "testtile",
-      author: "12",
-    };
   }
 
   // mutation{bookCreate(data:{title:"this is the title", author:"this is the author"}){title, author}}
@@ -71,7 +58,6 @@ const server = new ApolloServer({ schema: graphqlSchema });
   });
   console.log("Connected to mongo");
 
-  // The `listen` method launches a web server.
   server.listen().then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
   });
