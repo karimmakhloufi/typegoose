@@ -44,11 +44,11 @@ class BookResolver {
   }
 }
 
-const graphqlSchema = buildSchemaSync({
+const schema = buildSchemaSync({
   resolvers: [BookResolver],
 });
 
-const server = new ApolloServer({ schema: graphqlSchema });
+const server = new ApolloServer({ schema });
 
 (async () => {
   console.log("Connecting to MongoDB");
