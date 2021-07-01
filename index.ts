@@ -12,6 +12,7 @@ import {
   InputType,
   Arg,
 } from "type-graphql";
+import { Length } from "class-validator";
 
 @ObjectType("BookType")
 @InputType("BookInput")
@@ -22,6 +23,7 @@ class Book {
 
   @prop()
   @Field()
+  @Length(5, 255)
   author!: String;
 }
 
